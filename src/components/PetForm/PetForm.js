@@ -12,26 +12,24 @@ class PetForm extends Component {
     }
 
     handleChange = (event) => {
+        event.preventDefault();
+
         this.setState({
             ...this.state,
             [event.target.name]: event.target.value,
         })
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         this.props.dispatch( {type: 'ADD_PET', payload: this.state} );
-
-        // const addPet = (state = {}, action) => {
-        //     switch(action.type) {
-        //         case 'ADD_PET':
-        //             return action.payload;
-        //         default:
-        //             return state;
-        //     }
-        // }
     }
 
     render(){
+        const ownerList = this.props.reduxState.rootReducer.addOwner;
+        console.log( ownerList );
+        
+
         return(
             <form>
                 <h2>Add Pet</h2>
@@ -40,8 +38,9 @@ class PetForm extends Component {
                 <input type="text" name="breed" placeholder="Breed" onChange={this.handleChange} />
 
                 <select name="owner" value={this.state.owner} onChange={this.handleChange} >
-                    <menuitem value="Bob" >Bob</menuitem>
-                    <menuitem value="Jim" >Jim</menuitem>
+                    {ownerList.map( (owner, i) => 
+                            <option key={i} value={owner.name}>{owner.name}</option>
+                        )}
                 </select>
 
                 <button type="submit" onClick={this.handleSubmit} >Submit</button>

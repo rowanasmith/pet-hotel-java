@@ -16,7 +16,7 @@ class PetTable extends Component {
         <table className="petTable">
           <thead>
             <tr><th>Owner</th><th>Pet</th><th>Breed</th>
-            <th>Color</th><th>Checked In</th><th>Breed</th>Actions</tr>
+            <th>Color</th><th>Checked In</th><th>Breed</th><th>Actions</th></tr>
           </thead>
           <tbody>
 
