@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PetForm from '../PetForm/PetForm';
+import PetTable from '../PetTable/PetTable'
 
 function PetDashboard() {
   return (
@@ -8,7 +9,10 @@ function PetDashboard() {
       <h1> Pet Dashboard </h1>
 
       <PetForm />
+      
+      <PetTable />
     </div>
+
   );
 }
 
