@@ -1,10 +1,13 @@
 import React from 'react';
-import './App.css';
+
+import PetForm from '../PetForm/PetForm';
 
 function PetDashboard() {
   return (
     <div >
-      <h1> java app </h1>
+      <h1> Pet Dashboard </h1>
+
+      <PetForm />
     </div>
   );
 }
