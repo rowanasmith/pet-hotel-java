@@ -12,12 +12,14 @@ state = {
    }
 }
 
+// dispatch state.newOwner to owner reducer 
 addOwner = (event) => {
     event.preventDefault(); 
-   console.log('add an owner', this.state.newOwner);
+    console.log('add an owner', this.state.newOwner);
     this.props.dispatch({ type: 'ADD_OWNER', payload: this.state.newOwner })
 }
 
+// on change setState to input value
 handleChangeFor = (propertyName) => {
     return (event) => {
       this.setState({
@@ -41,8 +43,8 @@ render() {
             <button onClick={this.addOwner}>Submit</button>
         </form>
      </section>
-   );
- }
+        );
+    }
 }
 
 const mapStateToProps = reduxState => ({
