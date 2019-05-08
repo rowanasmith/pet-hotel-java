@@ -20,6 +20,15 @@ class PetForm extends Component {
 
     handleSubmit = () => {
         this.props.dispatch( {type: 'ADD_PET', payload: this.state} );
+
+        // const addPet = (state = {}, action) => {
+        //     switch(action.type) {
+        //         case 'ADD_PET':
+        //             return action.payload;
+        //         default:
+        //             return state;
+        //     }
+        // }
     }
 
     render(){
