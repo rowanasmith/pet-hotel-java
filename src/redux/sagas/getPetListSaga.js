@@ -9,7 +9,7 @@ function* getPetList(action){
     }
     catch (error) {
         console.log( `Couldn't get all pets!`, error );
-        alert( `Couldn't add your pet at this time. Try again later.`);
+        alert( `Couldn't get pets at this time. Try again later.`);
     }
 }
 

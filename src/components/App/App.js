@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import Header from "../Header/Header";
-import OwnerForm from "../AddOwner/addOwner"; 
 import PetDashboard from '../PetDashboard/PetDashboard';
+import OwnerDashboard from '../OwnerDashboard/OwnerDashboard';
 
 function App() {
   return (
     <div >
 
       <Header /> 
-      <OwnerForm /> 
+      <OwnerDashboard /> 
       <PetDashboard />
 
     </div>
