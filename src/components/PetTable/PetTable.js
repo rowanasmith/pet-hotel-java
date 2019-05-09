@@ -8,6 +8,8 @@ class PetTable extends Component {
 
 //the results from the API request will be mapped and displayed in this table
   render() {
+    const petList = this.props.reduxState.rootReducer.addPet;
+
     return (
       <div>
         <header>
@@ -16,10 +18,19 @@ class PetTable extends Component {
         <table className="petTable">
           <thead>
             <tr><th>Owner</th><th>Pet</th><th>Breed</th>
-            <th>Color</th><th>Checked In</th><th>Breed</th><th>Actions</th></tr>
+            <th>Color</th><th>Checked In</th><th>Actions</th></tr>
           </thead>
           <tbody>
-
+            {petList.map( (pet, i) => 
+                <tr key={i}>
+                  <td>{pet.owner}</td>
+                  <td>{pet.name}</td>
+                  <td>{pet.breed}</td>
+                  <td>{pet.color}</td>
+                  <td>Checked out</td>
+                  <td>buttons</td>
+                </tr>
+              )}
             
           </tbody>
         </table>
@@ -27,7 +38,7 @@ class PetTable extends Component {
     );
     }
 }
-const mapStateToProps = state => ({
-    movieSearchResults: state.movieSearchResults,
+const mapStateToProps = reduxState => ({
+    reduxState,
   });
 export default connect(mapStateToProps)(PetTable);

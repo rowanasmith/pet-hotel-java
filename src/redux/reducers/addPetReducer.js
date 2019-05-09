@@ -1,8 +1,18 @@
 
-const addPet = (state = {}, action) => {
+const pets = [
+    {
+        name: 'Fox',
+        color: 'Brown',
+        breed: 'Lab',
+        owner: 'Jay',
+    }
+]
+
+
+const addPet = (state = pets, action) => {
     switch(action.type) {
         case 'ADD_PET':
-            return action.payload;
+            return [...pets, action.payload];
         default:
             return state;
     }
