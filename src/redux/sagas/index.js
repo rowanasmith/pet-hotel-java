@@ -4,6 +4,8 @@ import getPetListSaga from './getPetListSaga';
 import addOwnerSaga from './addOwnerSaga';
 import getOwnerListSaga from './getOwnerListSaga';
 import deleteOwnerSaga from './deleteOwnerSaga';
+import deletePetSaga from './deletePetSaga';
+import updatePetSaga from './updatePetSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -13,6 +15,8 @@ export default function* rootSaga() {
       addOwnerSaga, // POST new owner to server
       getOwnerListSaga, // GET all owners from server
       deleteOwnerSaga, // DELETE owner by id
+      deletePetSaga, // DELETE pet by id
+      updatePetSaga, // PUT to check-in/check-out pets
   ]);
 }
 
