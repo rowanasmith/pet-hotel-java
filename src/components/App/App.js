@@ -1,18 +1,22 @@
 import React from 'react';
+import {HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Header from "../Header/Header";
-import OwnerForm from "../AddOwner/addOwner"; 
 import PetDashboard from '../PetDashboard/PetDashboard';
+import OwnerDashboard from '../OwnerDashboard/OwnerDashboard';
 
 function App() {
   return (
-    <div >
-
+    <Router>
       <Header /> 
-      <OwnerForm /> 
-      <PetDashboard />
 
-    </div>
+      <div >
+        <Route path="/owner-dashboard" component={OwnerDashboard} />
+        <Route path="/pet-dashboard" component={PetDashboard} />
+
+      </div>
+
+    </Router>
   );
 }
 

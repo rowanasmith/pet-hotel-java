@@ -11,8 +11,10 @@ const pets = [
 
 const addPet = (state = pets, action) => {
     switch(action.type) {
-        case 'ADD_PET':
-            return [...pets, action.payload];
+        // case 'ADD_PET':
+        //     return [...pets, action.payload];
+        case 'SET_PETLIST':
+            return action.payload;
         default:
             return state;
     }
