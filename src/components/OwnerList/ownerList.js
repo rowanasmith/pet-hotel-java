@@ -7,8 +7,9 @@ class OwnerList extends Component {
    this.props.dispatch({ type: 'GET_OWNERLIST', payload: this.props.reduxState.ownerReducer });
  }
 
- deleteOwner = () => {
+ deleteOwner = (id) => {
      console.log(`hit deleteOwner!`);
+     this.props.dispatch( {type: 'DELETE_OWNER', payload: id} );
  }
 
  render() {
@@ -39,7 +40,7 @@ class OwnerList extends Component {
                             {owner.pets}
                         </td>
                         <td>
-                        <button value={owner.id} onClick={this.deleteOwner()}>
+                        <button value={owner.id} onClick={this.deleteOwner(owner.id)}>
                             Delete
                         </button>
                         </td>
