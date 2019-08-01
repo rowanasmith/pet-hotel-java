@@ -9,7 +9,7 @@ class OwnerList extends Component {
 
  deleteOwner = (id) => {
      console.log(`hit deleteOwner!`);
-     this.props.dispatch( {type: 'DELETE_OWNER', payload: id} );
+    //  this.props.dispatch( {type: 'DELETE_OWNER', payload: id} );
  }
 
  render() {

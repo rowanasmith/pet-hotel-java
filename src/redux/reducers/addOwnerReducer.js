@@ -7,10 +7,10 @@ const owners = [
     },
 ]
 
-const addOwner = (state = owners, action) => {
+const addOwner = (state = [], action) => {
     switch(action.type) {
-        case 'ADD_OWNER':
-            return [...state, action.payload];
+        // case 'ADD_OWNER':
+        //     return [...state, action.payload];
         case 'SET_OWNERLIST':
             return action.payload;
         default:

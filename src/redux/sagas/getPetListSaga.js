@@ -1,9 +1,13 @@
 import axios from 'axios';
-import { put, takeLatest } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 
-function* getPetList(action){
+console.log( `Hey.` );
+
+
+function* getPetList(){
+    console.log( `Yo.` );
     try {
-        console.log( `GET all pets from server.`, action );
+        console.log( `GET all pets from server.` );
         const response = yield axios.get( '/api/pet' ); // update route when available
         yield put( {type: 'SET_PETLIST', payload: response.data} );
     }
@@ -14,7 +18,8 @@ function* getPetList(action){
 }
 
 function* getPetListSaga(){
-    yield takeLatest( 'GET_PETLIST', getPetList );
+    console.log( `Woot.` );
+    yield takeEvery( 'GET_PETLIST', getPetList );
 }
 
 export default getPetListSaga;

@@ -6,6 +6,10 @@ import {connect} from 'react-redux';
 
 class PetTable extends Component {
 
+  componentDidMount() {
+    this.props.dispatch( {type: 'GET_PETLIST'});
+  }
+
 //the results from the API request will be mapped and displayed in this table
   render() {
     const petList = this.props.reduxState.rootReducer.addPet;

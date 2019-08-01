@@ -9,7 +9,7 @@ CREATE TABLE "pets" (
    "p_name" VARCHAR(100) NOT NULL,
    "p_breed" VARCHAR(100) NOT NULL,
    "p_color" VARCHAR(50) NOT NULL,
-   "p_checkIn" Boolean NOT NULL,
+   "p_checkIn" Boolean NOT NULL DEFAULT false,
     "p_checkIn_date" DATE,
     "p_owner_id" INT REFERENCES "owners"
     
